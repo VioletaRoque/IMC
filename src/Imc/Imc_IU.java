@@ -34,6 +34,7 @@ public class Imc_IU extends javax.swing.JFrame {
         txtPeso = new javax.swing.JTextField();
         txtAltura = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
+        btnCalcular1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,6 +46,13 @@ public class Imc_IU extends javax.swing.JFrame {
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
+            }
+        });
+
+        btnCalcular1.setText("CALCULAR");
+        btnCalcular1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcular1ActionPerformed(evt);
             }
         });
 
@@ -65,7 +73,8 @@ public class Imc_IU extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCalcular)
-                                .addGap(0, 252, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                                .addComponent(btnCalcular1))
                             .addComponent(txtAltura))))
                 .addContainerGap())
         );
@@ -81,7 +90,9 @@ public class Imc_IU extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCalcular)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalcular)
+                    .addComponent(btnCalcular1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -90,11 +101,16 @@ public class Imc_IU extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-        double peso=Double.parseDouble(txtPeso.getText());
+       
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void btnCalcular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcular1ActionPerformed
+        // TODO add your handling code here:
+         double peso=Double.parseDouble(txtPeso.getText());
         double altura=Double.parseDouble(txtAltura.getText());
         double calcular=peso/(altura*altura);
         JOptionPane.showMessageDialog(this, "Tu IMC es: "+calcular);
-    }//GEN-LAST:event_btnCalcularActionPerformed
+    }//GEN-LAST:event_btnCalcular1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,6 +149,7 @@ public class Imc_IU extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnCalcular1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtAltura;
